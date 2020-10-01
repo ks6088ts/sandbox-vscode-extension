@@ -15,16 +15,31 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:sandbox-vscode-extension.helloWorld"
+		"onCommand:sandbox-vscode-extension.sendMail"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "sandbox-vscode-extension.helloWorld",
-				"title": "Hello World"
+				"command": "sandbox-vscode-extension.sendMail",
+				"title": "Send Mail"
 			}
-		]
+		],
+		"configuration": {
+			"title": "A sandbox for VS Code extension",
+			"properties": {
+				"sandbox.sender": {
+					"type": "string",
+					"default": "sender",
+					"description": "sender name"
+				},
+				"sandbox.receiver": {
+					"type": "string",
+					"default": "receiver@gmail.com",
+					"description": "receiver email address"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
