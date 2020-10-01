@@ -1,0 +1,26 @@
+name: test
+
+on: [ push ]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: install
+        run: make install
+
+      - name: test
+        run: make test
+
+      - name: package
+        run: make package
