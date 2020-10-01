@@ -3,6 +3,11 @@
 	"displayName": "sandbox-vscode-extension",
 	"description": "sandbox of vscode extension",
 	"version": "0.0.1",
+	"publisher": "ks6088ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ks6088ts/sandbox-vscode-extension.git"
+	},
 	"engines": {
 		"vscode": "^1.46.0"
 	},
