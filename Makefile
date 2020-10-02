@@ -9,10 +9,6 @@ install: ## install modules
 	npm install
 	npm install -g vsce
 
-.PHONY: test
-test: ## run tests
-	npm run lint # WIP
-
 .PHONY: package
 package: ## create package
 	vsce package
