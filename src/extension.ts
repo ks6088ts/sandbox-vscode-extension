@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import {getDateFormat} from './dateformat';
 
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
@@ -6,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
 			let sender = vscode.workspace.getConfiguration("sandbox").sender;
 			let receiver = vscode.workspace.getConfiguration("sandbox").receiver;
 			let subject = "[" + sender + "]";
-			let body = "hello world";
+			let body = "hello world @ " + getDateFormat(new Date());
 			vscode.window.showInformationMessage(sender);
 			vscode.env.openExternal(
 				vscode.Uri.parse("mailto:" + receiver + "?subject=" + subject + "&body=" + body)
